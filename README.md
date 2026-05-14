@@ -6,7 +6,7 @@
 
 <br />
 
-[![hi](https://readme-typing-svg.demolab.com?font=Silkscreen&weight=700&size=22&duration=2600&pause=900&color=4F5DBC&center=true&vCenter=true&width=440&height=46&lines=hi%2C+i'm+tyler.;system+9.2.2+%E2%80%94+ready.;%E2%86%92+tylr.space)](https://tylr.space)
+[![hi](https://readme-typing-svg.demolab.com?font=Silkscreen&weight=700&size=22&duration=2600&pause=900&color=4F5DBC&center=true&vCenter=true&width=440&height=46&lines=hi%2C+i'm+tyler.;system+9.2.2+ready.;%E2%86%92+tylr.space)](https://tylr.space)
 
 </div>
 
@@ -28,7 +28,7 @@
 
 ### 📂  Open
 
-- **[tylr.space](https://tylr.space)** — portfolio, Mac OS 9 themed
+- **[tylr.space](https://tylr.space)** · portfolio, Mac OS 9 themed
 - Pinned repos below ↓
 
 <br />
