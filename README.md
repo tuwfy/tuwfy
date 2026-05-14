@@ -1,8 +1,12 @@
 <div align="center">
 
-<img src="./mac.svg" alt="A classic Macintosh booting up" width="260" />
+<a href="https://tylr.space">
+  <img src="./mac.svg" alt="A classic Macintosh booting up; the Finder face on the screen blinks" width="260" />
+</a>
 
-[![Welcome](https://readme-typing-svg.demolab.com?font=Monaco&weight=700&size=20&duration=2800&pause=900&color=000000&background=FFFFFF00&center=true&vCenter=true&width=440&lines=Welcome+to+my+desktop.;System+9.2.2+%E2%80%94+ready.;Browse+%E2%86%92+tylr.space)](https://tylr.space)
+<br />
+
+[![hi](https://readme-typing-svg.demolab.com?font=Silkscreen&weight=700&size=22&duration=2600&pause=900&color=4F5DBC&center=true&vCenter=true&width=440&height=46&lines=hi%2C+i'm+tyler.;system+9.2.2+%E2%80%94+ready.;%E2%86%92+tylr.space)](https://tylr.space)
 
 </div>
 
@@ -30,5 +34,5 @@
 <br />
 
 <div align="center">
-<sub>` chime ` — booted 1999. still running.</sub>
+<sub><code>chime</code> &nbsp;·&nbsp; booted 1999. still running.</sub>
 </div>

@@ -1,6 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 380" width="280" height="380" role="img" aria-label="Animated classic Macintosh booting up">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 380" width="280" height="380" role="img" aria-label="Classic Macintosh booting up; the Finder face on the screen blinks every few seconds">
   <defs>
-    <!-- Aged platinum body, light from upper-left -->
     <linearGradient id="body" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%"  stop-color="#ECE3CB"/>
       <stop offset="35%" stop-color="#DCD0B2"/>
@@ -18,13 +17,11 @@
       <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0"/>
     </linearGradient>
 
-    <!-- Off screen: deep teal-black -->
     <radialGradient id="screenOff" cx="50%" cy="45%" r="80%">
       <stop offset="0%"  stop-color="#0E1C24"/>
       <stop offset="80%" stop-color="#06090C"/>
       <stop offset="100%" stop-color="#000000"/>
     </radialGradient>
-    <!-- Lit screen: warm phosphor white -->
     <radialGradient id="screenLit" cx="50%" cy="48%" r="75%">
       <stop offset="0%"  stop-color="#F4F1E2"/>
       <stop offset="70%" stop-color="#D9D3BB"/>
@@ -43,21 +40,12 @@
       <rect x="62" y="58" width="156" height="156" rx="18" ry="22"/>
     </clipPath>
 
-    <!-- Apple silhouette for rainbow clip -->
     <clipPath id="appleClip">
-      <path d="M 9 5
-               C 7 4 4 4 3 7
-               C 1 11 2 16 5 18
-               C 7 19 9 19 10 18
-               C 11 19 13 19 15 18
-               C 18 16 19 11 17 7
-               C 16 4 13 4 11 5
-               C 11 3 10 3 10 5
-               Z"/>
+      <path d="M 9 5 C 7 4 4 4 3 7 C 1 11 2 16 5 18 C 7 19 9 19 10 18 C 11 19 13 19 15 18 C 18 16 19 11 17 7 C 16 4 13 4 11 5 C 11 3 10 3 10 5 Z"/>
     </clipPath>
 
     <filter id="screenBlur" x="-2%" y="-2%" width="104%" height="104%">
-      <feGaussianBlur stdDeviation="0.4"/>
+      <feGaussianBlur stdDeviation="0.3"/>
     </filter>
   </defs>
 
@@ -65,42 +53,25 @@
   <ellipse cx="140" cy="370" rx="118" ry="4.5" fill="#000" opacity="0.22"/>
 
   <!-- BODY -->
-  <!-- A tall rounded rectangle with a subtle waist near the bottom (where the case curves inward before the base flare) -->
-  <path d="M 50 22
-           Q 32 22 32 40
-           L 32 308
-           Q 32 322 36 330
-           L 38 348
-           Q 39 358 49 358
-           L 231 358
-           Q 241 358 242 348
-           L 244 330
-           Q 248 322 248 308
-           L 248 40
-           Q 248 22 230 22 Z"
+  <path d="M 50 22 Q 32 22 32 40 L 32 308 Q 32 322 36 330 L 38 348 Q 39 358 49 358 L 231 358 Q 241 358 242 348 L 244 330 Q 248 322 248 308 L 248 40 Q 248 22 230 22 Z"
         fill="url(#body)" stroke="#7A6F58" stroke-width="0.9"/>
-  <!-- Subtle left-side highlight + right shadow -->
   <path d="M 50 22 Q 32 22 32 40 L 32 308 Q 32 322 36 330 L 38 348 Q 39 358 49 358 L 231 358 Q 241 358 242 348 L 244 330 Q 248 322 248 308 L 248 40 Q 248 22 230 22 Z"
         fill="url(#bodyEdge)"/>
-  <!-- Top sheen -->
   <path d="M 50 22 Q 32 22 32 40 L 32 90 L 248 90 L 248 40 Q 248 22 230 22 Z"
         fill="url(#topShade)"/>
 
-  <!-- Faint case seam line near front (subtle horizontal split where top half of CRT housing meets bottom case) -->
   <line x1="32" y1="232" x2="248" y2="232" stroke="#9F9276" stroke-width="0.4" opacity="0.5"/>
 
-  <!-- SCREEN BEZEL (recessed, deep dark) -->
+  <!-- SCREEN BEZEL -->
   <rect x="50" y="46" width="180" height="180" rx="14" fill="#2A251E"/>
   <rect x="54" y="50" width="172" height="172" rx="12" fill="#13100C"/>
-  <!-- Inner subtle highlight on bezel inset -->
   <rect x="55" y="51" width="170" height="170" rx="11" fill="none" stroke="#3A342B" stroke-width="0.8"/>
 
-  <!-- SCREEN (clipped to CRT curved-corner rectangle) -->
+  <!-- SCREEN -->
   <g clip-path="url(#screenClip)">
-    <!-- Off-screen base -->
     <rect x="62" y="58" width="156" height="156" fill="url(#screenOff)"/>
 
-    <!-- Power-on flash: brief bright white -->
+    <!-- Power-on flash -->
     <rect x="62" y="58" width="156" height="156" fill="#FFFFFF" opacity="0">
       <animate attributeName="opacity"
         values="0;0;0.95;0.3;0;0;0;0;0"
@@ -108,7 +79,7 @@
         dur="9s" repeatCount="indefinite"/>
     </rect>
 
-    <!-- Lit screen surface fades in after flash -->
+    <!-- Lit screen -->
     <rect x="62" y="58" width="156" height="156" fill="url(#screenLit)" opacity="0">
       <animate attributeName="opacity"
         values="0;0;0;0.5;1;1;1;0;0"
@@ -116,7 +87,7 @@
         dur="9s" repeatCount="indefinite"/>
     </rect>
 
-    <!-- Scan lines on lit screen -->
+    <!-- Scan lines -->
     <rect x="62" y="58" width="156" height="156" fill="url(#scan)" opacity="0">
       <animate attributeName="opacity"
         values="0;0;0;0;1;1;1;0;0"
@@ -124,49 +95,70 @@
         dur="9s" repeatCount="indefinite"/>
     </rect>
 
-    <!-- HAPPY MAC ICON (centered at 140,136) -->
+    <!-- FINDER FACE (Picasso-style two-tone) -->
     <g transform="translate(140 136)" opacity="0" filter="url(#screenBlur)">
       <animate attributeName="opacity"
         values="0;0;0;0;0;1;1;1;0;0"
         keyTimes="0;0.05;0.10;0.16;0.20;0.26;0.92;0.94;0.96;1"
         dur="9s" repeatCount="indefinite"/>
-      <!-- Icon body: classic Mac silhouette as a tiny picture -->
-      <rect x="-34" y="-36" width="68" height="72" rx="3" fill="none" stroke="#0A0A07" stroke-width="3.2"/>
-      <!-- Inner screen line on icon -->
-      <line x1="-22" y1="22" x2="22" y2="22" stroke="#0A0A07" stroke-width="2.6" stroke-linecap="round"/>
-      <!-- Left eye -->
-      <ellipse cx="-12" cy="-10" rx="3.2" ry="3.2" fill="#0A0A07">
-        <animate attributeName="ry"
-          values="3.2;3.2;3.2;3.2;0.4;3.2;3.2;3.2;3.2;3.2;0.4;3.2;3.2"
+
+      <!-- Left half: lighter blue -->
+      <path d="M -38 -30 Q -38 -38 -30 -38 L 0 -38 L 0 38 L -30 38 Q -38 38 -38 30 Z"
+            fill="#8893CB"/>
+      <!-- Right half: darker purple-blue -->
+      <path d="M 0 -38 L 30 -38 Q 38 -38 38 -30 L 38 30 Q 38 38 30 38 L 0 38 Z"
+            fill="#535BA0"/>
+
+      <!-- Outer black outline -->
+      <rect x="-38" y="-38" width="76" height="76" rx="8" fill="none" stroke="#000" stroke-width="3.5" stroke-linejoin="round"/>
+
+      <!-- Nose / divider line -->
+      <line x1="0" y1="-30" x2="0" y2="30" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+
+      <!-- Smile: asymmetric Picasso curve, crosses the nose with a small jog -->
+      <path d="M -28 6 Q -16 -8 -2 -8 L 2 -4 Q 14 20 28 14"
+            fill="none" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <!-- Left eye: vertical rectangle that "squishes" to blink -->
+      <rect x="-24" y="-22" width="6" height="14" fill="#000" rx="0.5">
+        <animate attributeName="height"
+          values="14;14;14;14;1;14;14;14;14;14;1;14;14"
           keyTimes="0;0.32;0.42;0.44;0.45;0.46;0.50;0.62;0.71;0.73;0.74;0.75;1"
           dur="9s" repeatCount="indefinite"/>
-      </ellipse>
+        <animate attributeName="y"
+          values="-22;-22;-22;-22;-15.5;-22;-22;-22;-22;-22;-15.5;-22;-22"
+          keyTimes="0;0.32;0.42;0.44;0.45;0.46;0.50;0.62;0.71;0.73;0.74;0.75;1"
+          dur="9s" repeatCount="indefinite"/>
+      </rect>
+
       <!-- Right eye -->
-      <ellipse cx="12" cy="-10" rx="3.2" ry="3.2" fill="#0A0A07">
-        <animate attributeName="ry"
-          values="3.2;3.2;3.2;3.2;0.4;3.2;3.2;3.2;3.2;3.2;0.4;3.2;3.2"
+      <rect x="18" y="-22" width="6" height="14" fill="#000" rx="0.5">
+        <animate attributeName="height"
+          values="14;14;14;14;1;14;14;14;14;14;1;14;14"
           keyTimes="0;0.32;0.42;0.44;0.45;0.46;0.50;0.62;0.71;0.73;0.74;0.75;1"
           dur="9s" repeatCount="indefinite"/>
-      </ellipse>
-      <!-- Smile -->
-      <path d="M -10 4 Q 0 14 10 4" fill="none" stroke="#0A0A07" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <animate attributeName="y"
+          values="-22;-22;-22;-22;-15.5;-22;-22;-22;-22;-22;-15.5;-22;-22"
+          keyTimes="0;0.32;0.42;0.44;0.45;0.46;0.50;0.62;0.71;0.73;0.74;0.75;1"
+          dur="9s" repeatCount="indefinite"/>
+      </rect>
     </g>
 
-    <!-- Shutdown collapse: horizontal line that thins to a point then vanishes -->
+    <!-- Shutdown collapse line -->
     <rect x="62" y="135" width="0" height="2" fill="#FFFFFF" opacity="0">
       <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.92;0.94;0.97;0.99" dur="9s" repeatCount="indefinite"/>
       <animate attributeName="width" values="0;156;156;30;0" keyTimes="0;0.92;0.94;0.97;0.99" dur="9s" repeatCount="indefinite"/>
       <animate attributeName="x" values="62;62;62;125;140" keyTimes="0;0.92;0.94;0.97;0.99" dur="9s" repeatCount="indefinite"/>
     </rect>
 
-    <!-- CRT vignette overlay (always on lit screen) -->
+    <!-- CRT vignette -->
     <rect x="62" y="58" width="156" height="156" fill="url(#crtVignette)" opacity="0">
       <animate attributeName="opacity"
         values="0;0;0;0;0.9;0.9;0.9;0;0"
         keyTimes="0;0.05;0.08;0.12;0.18;0.93;0.95;0.97;1"
         dur="9s" repeatCount="indefinite"/>
     </rect>
-    <!-- Glass reflection sheen (top-left) -->
+    <!-- Glass sheen -->
     <ellipse cx="100" cy="80" rx="34" ry="18" fill="#FFFFFF" opacity="0">
       <animate attributeName="opacity"
         values="0;0;0;0;0.08;0.08;0.08;0;0"
@@ -175,30 +167,24 @@
     </ellipse>
   </g>
 
-  <!-- FLOPPY DRIVE SLOT (right of center, below screen) -->
+  <!-- FLOPPY DRIVE SLOT -->
   <g>
     <rect x="120" y="252" width="105" height="11" fill="#3A332A" rx="2"/>
     <rect x="123" y="255" width="99" height="5" fill="#0A0907" rx="1"/>
-    <!-- Eject button -->
     <circle cx="218" cy="257.5" r="1.6" fill="#9D9477"/>
   </g>
 
-  <!-- "Macintosh" badge area below floppy: small rainbow apple + serifed wordmark -->
+  <!-- BADGE -->
   <g transform="translate(60 286)">
-    <!-- Rainbow Apple, scaled small (~20px tall) -->
-    <g transform="scale(1.0)">
-      <g clip-path="url(#appleClip)">
-        <rect x="0" y="3"  width="22" height="2.7" fill="#7DB942"/>
-        <rect x="0" y="5.7" width="22" height="2.7" fill="#F2B736"/>
-        <rect x="0" y="8.4" width="22" height="2.7" fill="#E88033"/>
-        <rect x="0" y="11.1" width="22" height="2.7" fill="#D03A38"/>
-        <rect x="0" y="13.8" width="22" height="2.7" fill="#9F4391"/>
-        <rect x="0" y="16.5" width="22" height="2.7" fill="#3987C0"/>
-      </g>
-      <!-- leaf -->
-      <path d="M 11 1 Q 13 0 13 3 Q 12 4 11 3 Z" fill="#7DB942"/>
+    <g clip-path="url(#appleClip)">
+      <rect x="0" y="3"   width="22" height="2.7" fill="#7DB942"/>
+      <rect x="0" y="5.7" width="22" height="2.7" fill="#F2B736"/>
+      <rect x="0" y="8.4" width="22" height="2.7" fill="#E88033"/>
+      <rect x="0" y="11.1" width="22" height="2.7" fill="#D03A38"/>
+      <rect x="0" y="13.8" width="22" height="2.7" fill="#9F4391"/>
+      <rect x="0" y="16.5" width="22" height="2.7" fill="#3987C0"/>
     </g>
-    <!-- Wordmark in Mac-y serif (Garamond-ish via system serif fallback) -->
+    <path d="M 11 1 Q 13 0 13 3 Q 12 4 11 3 Z" fill="#7DB942"/>
     <text x="30" y="17"
           font-family="'Apple Garamond', 'Garamond', 'Hoefler Text', Georgia, serif"
           font-size="13" font-weight="500" fill="#5A4F3B" letter-spacing="0.6">Macintosh</text>
