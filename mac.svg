@@ -95,47 +95,38 @@
         dur="9s" repeatCount="indefinite"/>
     </rect>
 
-    <!-- FINDER FACE (Picasso-style: profile silhouette on left, frontal face on right) -->
+    <!-- FINDER FACE -->
+    <!-- Geometry plan (face from -38..+38 on both axes):
+         - Lighter background fills the whole face
+         - Single cubic from (0,-38) → (0,38), bulging RIGHT to ~x=11 around y=-8 → that IS the profile silhouette / nose
+         - Smile = single quadratic concave-down hump from (-30,14) → control (0,-22) → (30,18)
+         - Two black rectangle eyes in the upper third, blinking by squishing height
+    -->
     <g transform="translate(140 136)" opacity="0" filter="url(#screenBlur)">
       <animate attributeName="opacity"
         values="0;0;0;0;0;1;1;1;0;0"
         keyTimes="0;0.05;0.10;0.16;0.20;0.26;0.92;0.94;0.96;1"
         dur="9s" repeatCount="indefinite"/>
 
-      <!-- 1. Lighter background (whole face, periwinkle) -->
-      <rect x="-38" y="-38" width="76" height="76" rx="8" fill="#8B9CD7"/>
+      <!-- Lighter periwinkle background -->
+      <rect x="-38" y="-38" width="76" height="76" rx="8" fill="#91A3D9"/>
 
-      <!-- 2. Darker profile silhouette on LEFT (covers left + the curved nose-bridge that intrudes into the right). -->
-      <!--    Path: top-left → straight across top to ~center → curves down forming forehead/nose/chin → back to bottom-left -->
-      <path d="M -38 -38
-               L 2 -38
-               C 8 -26 -4 -18 0 -10
-               C 6 -4 -2 0 -4 8
-               C -4 14 4 18 -2 26
-               L -2 38
-               L -38 38 Z"
-            fill="#4D5BA0"/>
+      <!-- Darker indigo LEFT region, bounded on the right by the nose silhouette -->
+      <path d="M -38 -38 L 0 -38 C 16 -20 12 0 0 38 L -38 38 Z" fill="#4456A1"/>
 
-      <!-- 3. Profile silhouette OUTLINE (the visible "nose" curve, drawn in black). -->
-      <path d="M 2 -38
-               C 8 -26 -4 -18 0 -10
-               C 6 -4 -2 0 -4 8
-               C -4 14 4 18 -2 26
-               L -2 38"
-            fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Visible nose silhouette (single smooth cubic) -->
+      <path d="M 0 -38 C 16 -20 12 0 0 38"
+            fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
 
-      <!-- 4. SMILE: concave-down arc (corners LOW, peak HIGH). Asymmetric with a small jog at the chin. -->
-      <path d="M -30 12
-               Q -20 -2 -8 -2
-               L -2 4
-               Q 14 8 30 14"
-            fill="none" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Smile: single smooth concave-down quadratic -->
+      <path d="M -30 14 Q 0 -22 30 18"
+            fill="none" stroke="#000" stroke-width="3.5" stroke-linecap="round"/>
 
-      <!-- 5. Outer rounded-square outline (drawn last, on top) -->
+      <!-- Outer rounded-square outline -->
       <rect x="-38" y="-38" width="76" height="76" rx="8" fill="none" stroke="#000" stroke-width="3.5" stroke-linejoin="round"/>
 
-      <!-- 6. Left eye (in DARKER region) -->
-      <rect x="-26" y="-24" width="6" height="14" fill="#000" rx="0.5">
+      <!-- Left eye (in DARKER region) -->
+      <rect x="-22" y="-24" width="6" height="14" fill="#000">
         <animate attributeName="height"
           values="14;14;14;14;1;14;14;14;14;14;1;14;14"
           keyTimes="0;0.32;0.42;0.44;0.45;0.46;0.50;0.62;0.71;0.73;0.74;0.75;1"
@@ -146,8 +137,8 @@
           dur="9s" repeatCount="indefinite"/>
       </rect>
 
-      <!-- 7. Right eye (in LIGHTER region) -->
-      <rect x="14" y="-24" width="6" height="14" fill="#000" rx="0.5">
+      <!-- Right eye (in LIGHTER region) -->
+      <rect x="16" y="-24" width="6" height="14" fill="#000">
         <animate attributeName="height"
           values="14;14;14;14;1;14;14;14;14;14;1;14;14"
           keyTimes="0;0.32;0.42;0.44;0.45;0.46;0.50;0.62;0.71;0.73;0.74;0.75;1"
