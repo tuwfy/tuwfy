@@ -95,56 +95,48 @@
         dur="9s" repeatCount="indefinite"/>
     </rect>
 
-    <!-- FINDER FACE -->
-    <!-- Geometry plan (face from -38..+38 on both axes):
-         - Lighter background fills the whole face
-         - Single cubic from (0,-38) → (0,38), bulging RIGHT to ~x=11 around y=-8 → that IS the profile silhouette / nose
-         - Smile = single quadratic concave-down hump from (-30,14) → control (0,-22) → (30,18)
-         - Two black rectangle eyes in the upper third, blinking by squishing height
-    -->
+    <!-- SMILEY FACE: rounded square split down the middle, smile + two blinking eyes -->
     <g transform="translate(140 136)" opacity="0" filter="url(#screenBlur)">
       <animate attributeName="opacity"
         values="0;0;0;0;0;1;1;1;0;0"
         keyTimes="0;0.05;0.10;0.16;0.20;0.26;0.92;0.94;0.96;1"
         dur="9s" repeatCount="indefinite"/>
 
-      <!-- Lighter periwinkle background -->
+      <!-- Lighter periwinkle background (whole face) -->
       <rect x="-38" y="-38" width="76" height="76" rx="8" fill="#91A3D9"/>
 
-      <!-- Darker indigo LEFT region, bounded on the right by the nose silhouette -->
-      <path d="M -38 -38 L 0 -38 C 16 -20 12 0 0 38 L -38 38 Z" fill="#4456A1"/>
+      <!-- Darker indigo LEFT half (rounded only on the left side, flat on the right) -->
+      <path d="M -38 -30 Q -38 -38 -30 -38 L 0 -38 L 0 38 L -30 38 Q -38 38 -38 30 Z" fill="#4456A1"/>
 
-      <!-- Visible nose silhouette (single smooth cubic) -->
-      <path d="M 0 -38 C 16 -20 12 0 0 38"
-            fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+      <!-- Vertical divider straight down the middle -->
+      <line x1="0" y1="-38" x2="0" y2="38" stroke="#000" stroke-width="3" stroke-linecap="round"/>
 
-      <!-- Smile: single smooth concave-down quadratic -->
-      <path d="M -30 14 Q 0 -22 30 18"
-            fill="none" stroke="#000" stroke-width="3.5" stroke-linecap="round"/>
+      <!-- SMILE: classic concave-up curve (corners UP, middle DOWN) -->
+      <path d="M -26 -2 Q 0 22 26 -2" fill="none" stroke="#000" stroke-width="3.5" stroke-linecap="round"/>
 
-      <!-- Outer rounded-square outline -->
+      <!-- Outer outline -->
       <rect x="-38" y="-38" width="76" height="76" rx="8" fill="none" stroke="#000" stroke-width="3.5" stroke-linejoin="round"/>
 
-      <!-- Left eye (in DARKER region) -->
-      <rect x="-22" y="-24" width="6" height="14" fill="#000">
+      <!-- Left eye -->
+      <rect x="-22" y="-22" width="6" height="12" fill="#000">
         <animate attributeName="height"
-          values="14;14;14;14;1;14;14;14;14;14;1;14;14"
+          values="12;12;12;12;1;12;12;12;12;12;1;12;12"
           keyTimes="0;0.32;0.42;0.44;0.45;0.46;0.50;0.62;0.71;0.73;0.74;0.75;1"
           dur="9s" repeatCount="indefinite"/>
         <animate attributeName="y"
-          values="-24;-24;-24;-24;-17.5;-24;-24;-24;-24;-24;-17.5;-24;-24"
+          values="-22;-22;-22;-22;-16.5;-22;-22;-22;-22;-22;-16.5;-22;-22"
           keyTimes="0;0.32;0.42;0.44;0.45;0.46;0.50;0.62;0.71;0.73;0.74;0.75;1"
           dur="9s" repeatCount="indefinite"/>
       </rect>
 
-      <!-- Right eye (in LIGHTER region) -->
-      <rect x="16" y="-24" width="6" height="14" fill="#000">
+      <!-- Right eye -->
+      <rect x="16" y="-22" width="6" height="12" fill="#000">
         <animate attributeName="height"
-          values="14;14;14;14;1;14;14;14;14;14;1;14;14"
+          values="12;12;12;12;1;12;12;12;12;12;1;12;12"
           keyTimes="0;0.32;0.42;0.44;0.45;0.46;0.50;0.62;0.71;0.73;0.74;0.75;1"
           dur="9s" repeatCount="indefinite"/>
         <animate attributeName="y"
-          values="-24;-24;-24;-24;-17.5;-24;-24;-24;-24;-24;-17.5;-24;-24"
+          values="-22;-22;-22;-22;-16.5;-22;-22;-22;-22;-22;-16.5;-22;-22"
           keyTimes="0;0.32;0.42;0.44;0.45;0.46;0.50;0.62;0.71;0.73;0.74;0.75;1"
           dur="9s" repeatCount="indefinite"/>
       </rect>
