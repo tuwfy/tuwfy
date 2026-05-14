@@ -102,43 +102,45 @@
         keyTimes="0;0.05;0.10;0.16;0.20;0.26;0.92;0.94;0.96;1"
         dur="9s" repeatCount="indefinite"/>
 
-      <!-- Left half: lighter blue -->
-      <path d="M -38 -30 Q -38 -38 -30 -38 L 0 -38 L 0 38 L -30 38 Q -38 38 -38 30 Z"
-            fill="#8893CB"/>
-      <!-- Right half: darker purple-blue -->
-      <path d="M 0 -38 L 30 -38 Q 38 -38 38 -30 L 38 30 Q 38 38 30 38 L 0 38 Z"
-            fill="#535BA0"/>
+      <!-- Left half: lighter periwinkle -->
+      <path d="M -38 -32 Q -38 -38 -32 -38 L 0 -38 L 0 38 L -32 38 Q -38 38 -38 32 Z"
+            fill="#818FCC"/>
+      <!-- Right half: darker indigo -->
+      <path d="M 0 -38 L 32 -38 Q 38 -38 38 -32 L 38 32 Q 38 38 32 38 L 0 38 Z"
+            fill="#4A50A1"/>
 
-      <!-- Outer black outline -->
-      <rect x="-38" y="-38" width="76" height="76" rx="8" fill="none" stroke="#000" stroke-width="3.5" stroke-linejoin="round"/>
+      <!-- Vertical divider (drawn first so the smile crosses it visually) -->
+      <line x1="0" y1="-32" x2="0" y2="32" stroke="#000" stroke-width="3" stroke-linecap="round"/>
 
-      <!-- Nose / divider line -->
-      <line x1="0" y1="-30" x2="0" y2="30" stroke="#000" stroke-width="3" stroke-linecap="round"/>
-
-      <!-- Smile: asymmetric Picasso curve, crosses the nose with a small jog -->
-      <path d="M -28 6 Q -16 -8 -2 -8 L 2 -4 Q 14 20 28 14"
+      <!-- SMILE: rises from lower-left → peak just past center → step down → smooth descent to lower-right.
+           Left arc control point ABOVE the curve (negative Y) to bow it UP into a smile shape.
+           Right arc control point near the line for a clean descending curve. -->
+      <path d="M -32 8 Q -16 -12 -2 -8 L 2 -4 Q 16 0 30 10"
             fill="none" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
 
-      <!-- Left eye: vertical rectangle that "squishes" to blink -->
-      <rect x="-24" y="-22" width="6" height="14" fill="#000" rx="0.5">
+      <!-- Outer outline (drawn LAST so it sits on top of the bg fills) -->
+      <rect x="-38" y="-38" width="76" height="76" rx="7" fill="none" stroke="#000" stroke-width="3.5" stroke-linejoin="round"/>
+
+      <!-- Left eye -->
+      <rect x="-23" y="-24" width="6" height="14" fill="#000" rx="0.5">
         <animate attributeName="height"
           values="14;14;14;14;1;14;14;14;14;14;1;14;14"
           keyTimes="0;0.32;0.42;0.44;0.45;0.46;0.50;0.62;0.71;0.73;0.74;0.75;1"
           dur="9s" repeatCount="indefinite"/>
         <animate attributeName="y"
-          values="-22;-22;-22;-22;-15.5;-22;-22;-22;-22;-22;-15.5;-22;-22"
+          values="-24;-24;-24;-24;-17.5;-24;-24;-24;-24;-24;-17.5;-24;-24"
           keyTimes="0;0.32;0.42;0.44;0.45;0.46;0.50;0.62;0.71;0.73;0.74;0.75;1"
           dur="9s" repeatCount="indefinite"/>
       </rect>
 
       <!-- Right eye -->
-      <rect x="18" y="-22" width="6" height="14" fill="#000" rx="0.5">
+      <rect x="17" y="-24" width="6" height="14" fill="#000" rx="0.5">
         <animate attributeName="height"
           values="14;14;14;14;1;14;14;14;14;14;1;14;14"
           keyTimes="0;0.32;0.42;0.44;0.45;0.46;0.50;0.62;0.71;0.73;0.74;0.75;1"
           dur="9s" repeatCount="indefinite"/>
         <animate attributeName="y"
-          values="-22;-22;-22;-22;-15.5;-22;-22;-22;-22;-22;-15.5;-22;-22"
+          values="-24;-24;-24;-24;-17.5;-24;-24;-24;-24;-24;-17.5;-24;-24"
           keyTimes="0;0.32;0.42;0.44;0.45;0.46;0.50;0.62;0.71;0.73;0.74;0.75;1"
           dur="9s" repeatCount="indefinite"/>
       </rect>
